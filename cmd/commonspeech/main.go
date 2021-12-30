@@ -39,6 +39,8 @@ func main() {
 	// result, statusCode, err := client.PerformWithURL("5f042c1f1bac63001e897f27", []string{"http://172.26.2.63:18888"})
 	// fmt.Println(result, statusCode, err)
 
+	fmt.Printf("[Start] %c[33;40m所有任务开始...%c[0m\n", 0x1b, 0x1b)
+
 	for _, sid := range secretIds {
 		resultCh := make(chan map[string]string, 100)
 		syncSpeechs = append(syncSpeechs, &recognition.SyncSpeech{SecretId: sid, Client: client, ResultDataCh: resultCh})
