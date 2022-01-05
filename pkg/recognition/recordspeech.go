@@ -47,7 +47,7 @@ func (syp *AsyncSpeechHdler) Recognition(url string, concurrent *sync.WaitGroup)
 	if syp.Client == nil {
 		panic("get sync speech handler failed")
 	}
-	result, statusCode, err := syp.Client.Perform(syp.SecretId, url, "")
+	result, statusCode, err := syp.Client.Perform(syp.SecretId, url)
 	// result, statusCode, err := "test", 200, errors.New("text")
 	if err != nil {
 		result = fmt.Sprintf("recognition failed: %s", err.Error())

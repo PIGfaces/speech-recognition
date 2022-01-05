@@ -48,7 +48,7 @@ func parseArg() {
 // 执行任务
 func runTask() {
 	// 拆分需要执行的任务
-	var schedule schedule.ScheduleInter = handler.RecordSpeechEngin{}.GetTaskSchedule(secretIds, privKeyPath, concurrentNum)
+	var schedule schedule.ScheduleInter = handler.RecordSpeechEngin{}.GetTaskSchedule(resultDir, secretIds, privKeyPath, concurrentNum)
 	schedule.SpeechSchedule(taskPath)
 	fmt.Printf("[DONE] %c[31;47m所有任务完成%c[0m\n", 0x1b, 0x1b)
 }

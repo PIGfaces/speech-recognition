@@ -68,5 +68,5 @@ func getTaskSchedule() schedule.ScheduleInter {
 		speechEngin = handler.CommSpeechEngin{}
 	}
 
-	return speechEngin.GetTaskSchedule(secretIds, privKeyPath, concurrentNum)
+	return speechEngin.GetTaskSchedule(resultDir, secretIds, privKeyPath, concurrentNum)
 }

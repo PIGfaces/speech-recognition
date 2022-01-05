@@ -16,10 +16,10 @@ build_summary:
 	@go build -o "${SUMMARY_SPEECH_TOOL}" cmd/speech/main.go
 
 build_common: 
-	@go build -o "${SUMMARY_SPEECH_TOOL}" cmd/speech/main.go
+	@go build -o "${COMMON_SPEECH_TOOL}" cmd/commonspeech/main.go
 
 build_record: 
-	@go build -o "${SUMMARY_SPEECH_TOOL}" cmd/speech/main.go
+	@go build -o "${RECORD_SPEECH_TOOL}" cmd/recordspeech/main.go
 
 check:
 	@go fmt ./
