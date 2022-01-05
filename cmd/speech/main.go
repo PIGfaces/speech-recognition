@@ -8,11 +8,12 @@ import (
 )
 
 var (
-	resultDir     string
-	taskPath      string
-	secretIds     string
-	privKeyPath   string
-	concurrentNum int
+	resultDir         string
+	taskPath          string
+	secretIds         string
+	privKeyPath       string
+	concurrentNum     int
+	runAsyncSpeechAPI bool
 )
 
 func init() {
@@ -22,6 +23,7 @@ func init() {
 	flag.StringVar(&privKeyPath, "PrivKeyPath", "", "secretId 对应的私钥路径, 必须有! 如: -PrivKeyPath=./rsa_private_key.pem")
 	// flag.IntVar(, "PrivKeyPath", "", "secretId 对应的私钥路径, 必须有! 如: -PrivKeyPath=./rsa_private_key.pem")
 	flag.IntVar(&concurrentNum, "ConcurrentNum", 10, "每个 secretId 并发数量, 默认 QPS 为 10")
+	flag.BoolVar(&runAsyncSpeechAPI, "AsyncRecordSpeechAPI", false, "是否调用异步点播接口，不设置则默认调用同步接口")
 }
 
 func main() {
@@ -48,7 +50,23 @@ func parseArg() {
 // 执行任务
 func runTask() {
 	// 拆分需要执行的任务
-	var schedule schedule.ScheduleInter = handler.CommSpeechEngin{}.GetTaskSchedule(secretIds, privKeyPath, concurrentNum)
+	var schedule schedule.ScheduleInter = getTaskSchedule()
 	schedule.SpeechSchedule(taskPath)
 	fmt.Printf("[DONE] %c[31;47m所有任务完成%c[0m\n", 0x1b, 0x1b)
+}
+
+// 获取同步或者异步的任务体
+func getTaskSchedule() schedule.ScheduleInter {
+	var (
+		// tupuAPIClient   recognition.TupuSpeechClientIntf
+		speechEngin handler.SpeechHandlerEngin
+	)
+
+	if runAsyncSpeechAPI {
+		speechEngin = handler.RecordSpeechEngin{}
+	} else {
+		speechEngin = handler.CommSpeechEngin{}
+	}
+
+	return speechEngin.GetTaskSchedule(secretIds, privKeyPath, concurrentNum)
 }

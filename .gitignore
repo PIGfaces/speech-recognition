@@ -1,2 +1,5 @@
 source/
 *.txt
+summarySpeech
+recordSpeech
+commonSpeech
