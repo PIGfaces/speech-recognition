@@ -1,3 +1,7 @@
 github.com/bitly/go-simplejson v0.5.0/go.mod h1:cXHtHw4XUPsvGaxgjIAn8PhEWG9NfngEKAMDJEczWVA=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/asr v1.0.334 h1:bkYmVrCYZyLoemVhacsVKR4hHrtNu3dozlIhae612Ic=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/asr v1.0.334/go.mod h1:K2Lj4N3VUw1As1TrRbtxQgL8OJxJ3gTB7jPJJNrVb5s=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.334 h1:tNkXg+cTnESAX6EmQWfF05NsYfD7U8qKtk/3YbWOCKk=
+github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.334/go.mod h1:7sCQWVkxcsR38nffDW057DRGk8mUjK1Ing/EFOK8s8Y=
 github.com/tuputech/tupu-go-sdk v1.10.0 h1:E7S9FbgGdTJrTN0aKqnvhAedeX57HVGZEnXHF+oTXmg=
 github.com/tuputech/tupu-go-sdk v1.10.0/go.mod h1:vkWhGFAWTHOHDKKxS14MrGnf2Z9L/IDBQYcKGCO1w5U=

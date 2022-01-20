@@ -35,6 +35,7 @@ func (signleton *AsySpchClient) GetAPIClient(privkeyPath string) *spch.AsyncHand
 		return value.(*spch.AsyncHandler)
 	}
 	cli, err := spch.NewSpeechHandler(privkeyPath)
+	cli.SetServerURL("http://api.speech.tuputech.com/v3/recognition/speech/recording/async/")
 	if err != nil {
 		panic("create sync handler failed!" + err.Error())
 	}
