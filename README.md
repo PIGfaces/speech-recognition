@@ -1,6 +1,7 @@
 # 调用语音API工具
 
-## 基本说明
+## 基本说明    
+使用的 tupu-go-sdk 和 腾讯云 asr sdk 做的调用小工具
 
 ### 目录说明
 
@@ -45,5 +46,5 @@ $ ./speechRecord -PrivKeyPath=./rsa_private_key.pem -SecretIds=61cafe78a99718009
 
 - `-PrivKeyPath` : 私钥路径   
 - `-SecretIds` : 本次任务需要执行的 `secretId` 接口   
-- `-TaskFilePath`: 本次任务需要审核的语音 `url` , 一行一条 `url`, 按行区分    
+- `-TaskFilePath`: 本次任务需要审核保存的语音 `url` 文件, 一行一条 `url`, 按行区分    
 - `-concurrentNum`: 本次任务每秒执行的请求数量
